@@ -35,17 +35,22 @@ class BestBooks extends React.Component {
     let books = this.state.books.map(book => {
       return (
         <Carousel.Item>
+
           <img
           className="jp-box w-100"
           src="../img/littlefreelibray.jpg"
           alt="Little Free Libray for first slide"
           />
+
           <h3>{book.title}</h3>
+
           <Carousel.Caption>
             <h4>Description</h4>
             <p>{book.description}</p>
           </Carousel.Caption>
+
         </Carousel.Item>
+        
       )
     })
 
