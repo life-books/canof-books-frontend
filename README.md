@@ -1,13 +1,58 @@
-# Start your own "Can of Books" App
+# Project Name: Can of Books
 
-This repository has starter code to begin work on creating your own online bookshelf.
+**Author**: Paula Davidson and Jeremy Adamson
+**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
-## What can books do?
+## Overview
 
-Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
+Creating a list of books that can be updated by the user and concurrently updates our handbuild database.
 
-## Use this template
+## Getting Started
 
-Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
+Copy the frontend and backend repos to you local machine and add your database
 
-We are adding for testing  the branches.
+## Architecture
+
+Built using Atlas for mongodb, react-bootstrap, and javascript
+
+## Change Log
+
+02-11-2001 6:59pm - Application now has a fully-functional netlify link that communicates with the backend database
+
+## Estimates
+
+
+## Credit and Collaborations
+
+We want to thank our instructor Roger Reyes, netlify, render.com, and vscode! 
+
+Logistical
+
+* What hours will you be available to communicate? 
+Regular Nights and weekends unless we see fit to work longer to get the lab done. 
+
+* What platform will you use to communicate (ie. Slack, phone …)?
+Slack
+
+* How often will you take breaks?
+At least once every two hours
+
+* What is your plan if you start to fall behind?
+Work together to get caught up, ask for TA help, work more hours, and ask Roger for direction.
+
+Cooperative
+
+Paula's strengths: persistence, styling, react-bootstrap, deployment, details
+
+Jeremy's strengths: logic, javascript, componentizing, rational, flexible, patient
+
+Conflict Resolution
+
+* What will your team do if one person is pulling all the weight while the other person is not contributing?
+Talk about it, do regular checkin to be sure we are delegating properly.
+
+* What will your team do if one person is taking over the project and not letting the other member contribute?
+Talk about it, get clear on why the person feels it is nessicary to take the reigns, ask for a mediater if needed.
+
+* How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
+We will be patience, incorporate time to explain or ask question, and be flexible with how we create solutions for our differnce, and take joy in each others journey.
