@@ -1,11 +1,23 @@
 import { Component } from "react";
 
+import authorInfo from "./authors.json";
+import AuthorCard from "./AuthorCard";
+
 class Profile extends Component {
 
   render() {
-    /* TODO: render information about the developers */
-    return <p>Profile page coming soon</p>
+    return(
+      <>
+        {authorInfo.map(person => <AuthorCard
+          key={person.key}
+          name={person.name}
+          img_Url={person.img_Url}
+          description={person.description}
+        />)}
+      </>
+    )
   }
 };
 
 export default Profile;
+
