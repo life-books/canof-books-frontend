@@ -8,7 +8,7 @@ class AuthorCard extends Component {
         <div className='author'>
           <Card style={{ width: '18rem' }}>
             <Card.Title as="h2">{this.props.name}</Card.Title>
-            <Card.Img src={this.props.img_Url} />
+            <Card.Img src={this.props.img_Url} alt='Photos of Authors'/>
             <Card.Text>{this.props.description}</Card.Text>
           </Card>
         </div>

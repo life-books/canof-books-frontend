@@ -11,7 +11,7 @@ class Profile extends Component {
         {authorInfo.map(person => <AuthorCard
           key={person.key}
           name={person.name}
-          img_Url={person.image_url}
+          img_Url={person.img_Url}
           description={person.description}
         />)}
       </>

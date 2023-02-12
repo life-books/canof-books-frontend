@@ -38,7 +38,7 @@ class BestBooks extends React.Component {
 
           <img
           className="jp-box w-100"
-          src="../img/littlefreelibray.jpg"
+          src="https://images.pexels.com/photos/4582544/pexels-photo-4582544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Little Free Libray for first slide"
           />
 
