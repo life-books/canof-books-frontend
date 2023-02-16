@@ -44,12 +44,15 @@ class BestBooks extends React.Component {
   }
 
   handleBookSubmission = (event) => {
+    console.log('We made it');
     event.preventDefault();
     let newBook = {
       title: event.target.Title.value,
       description: event.target.Description.value,
-      status:event.target.Status.value
+      status: event.target.Status.value === 'on' 
+      
     }
+    console.log(newBook);
 
     this.postBooks(newBook);
     this.handleCloseModal();
@@ -71,6 +74,7 @@ class BestBooks extends React.Component {
   }
 
   deleteTheBook = async (id) => {
+    console.log(id, 'This is the id');
     try {
       let url = `${process.env.REACT_APP_SERVER}/books/${id}`;
 
@@ -97,7 +101,7 @@ class BestBooks extends React.Component {
     /* TODO: render all the books in a Carousel */
     let books = this.state.books.map(book => {
       return (
-        <Carousel.Item>
+        <Carousel.Item key={book._id}>
 
           <img
           className="jp-box w-100"
@@ -110,6 +114,7 @@ class BestBooks extends React.Component {
           <Carousel.Caption>
             <h4>Description</h4>
             <p>{book.description}</p>
+          <Button variant='danger' onClick={()=> this.deleteTheBook(book._id)}>Delete this Book</Button>
           </Carousel.Caption>
 
         </Carousel.Item>
