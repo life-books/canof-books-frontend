@@ -1,13 +1,31 @@
 import React from 'react';
 import axios from 'axios';
 import Carousel from 'react-bootstrap/Carousel';
+import { Button } from 'react-bootstrap';
+import BookFormModal from './BookFormModal';
 
 class BestBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: []
+      books: [],
+      modalShow: false
+
     }
+  }
+
+  //Open and Close Modal Functions
+
+  handleOpenModal = () => {
+    this.setState({
+      modalShow: true
+    })
+  }
+
+  handleCloseModal = () => {
+    this.setState({
+      modalShow: false
+    })
   }
 
   /* TODO: Make a GET request to your API to fetch all the books from the database  */
@@ -22,6 +40,51 @@ class BestBooks extends React.Component {
     } catch (error) {
       console.log('Jinkies! We have an error:',error.response)
 
+    }
+  }
+
+  handleBookSubmission = (event) => {
+    event.preventDefault();
+    let newBook = {
+      title: event.target.Title.value,
+      description: event.target.Description.value,
+      status:event.target.Status.value
+    }
+
+    this.postBooks(newBook);
+    this.handleCloseModal();
+  }
+
+  postBooks = async (newBookObj) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/books`;
+
+      let createdBook = await axios.post(url, newBookObj);
+
+      this.setState({
+        books: [...this.state.books, createdBook.data]
+      })
+
+    }catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  deleteTheBook = async (id) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/books/${id}`;
+
+      await axios.delete(url);
+
+      let updatedBooks = this.state.books.filter(book => book._id !== id);
+
+      this.setState({
+        books: updatedBooks
+      });
+
+
+    } catch (error) {
+      console.log(error.message);
     }
   }
 
