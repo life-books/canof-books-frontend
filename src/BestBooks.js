@@ -126,6 +126,9 @@ class BestBooks extends React.Component {
         ) : (
           <h3>No Books Found :(</h3>
         )}
+
+        <Button variant='primary' onClick={this.handleOpenModal}>Add Book</Button>
+        <BookFormModal modalShow={this.state.modalShow} modalHide={this.handleCloseModal} handleSubmit={this.handleBookSubmission} />
       </>
     )
   }
