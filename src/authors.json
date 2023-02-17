@@ -2,13 +2,13 @@
     {
         "_key": 1,
         "name": "Paula Davidson",
-        "img_Url": "../images/paula.png",
+        "img_Url": "./image/paula.png",
         "description": "Paula is one cool cat. She lives in Tacoma, Washington. She drinks quality water and frequents the sauna. She has been a health care professional for over half a decade. These days they study deligently and watch Naruto when they get a moment. She is grateful for the oppurtunity to work with these classmates at Code Fellows! "
     },
     {
         "_key": 2,
         "name": "Jeremy Adamson",
-        "img_Url": "../images/jeremy-adamson.jpg",
+        "img_Url": "./image/jeremy-adamson.jpg",
         "description": "Jeremy currently resides in Saint Louis after relocating several times throughout the United States.They hold degrees from University of California Irvine in both computational physics and computational mathematics along with a California teaching credential.They currently work at Boeing as a systems integrator and OMS lead after taking time out of their career to be a stay at home parent and will be pursuing a Master's in computer science next fall."
     }
 ]

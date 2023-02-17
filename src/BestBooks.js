@@ -105,14 +105,15 @@ class BestBooks extends React.Component {
 
           <img
           className="jp-box w-100"
-          src="https://images.pexels.com/photos/4582544/pexels-photo-4582544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          src="https://images.pexels.com/photos/1850021/pexels-photo-1850021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Little Free Libray for first slide"
           />
 
-          <h3>{book.title}</h3>
+          
 
           <Carousel.Caption>
-            <h4>Description</h4>
+          <h2>{book.title}</h2>
+            <h5>Description</h5>
             <p>{book.description}</p>
           <Button variant='danger' onClick={()=> this.deleteTheBook(book._id)}>Delete this Book</Button>
           </Carousel.Caption>
