@@ -1,0 +1,22 @@
+img.jp-box.w-100 {
+    width: auto;
+    height:800px; 
+    }
+
+body{
+    background-color: #212529;
+    color: rgb(219, 173, 113);
+    text-align: center;
+   border-radius: 20%;
+   
+}
+
+Footer{
+    background-color: rgb(49, 82, 71);
+}
+span.nabar-brand{
+    text-align: center;
+}
+Header{
+    background-color: rgb(49, 82, 71);
+}
