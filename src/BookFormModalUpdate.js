@@ -11,7 +11,9 @@ class BookFormModalUpdate extends React.Component {
         <Modal
           show={this.props.modalShowUpdate}
           onHide={this.props.modalHideUpdate}
+          
         >
+         
           <Modal.Header closeButton onHide={this.props.modalHideUpdate}>
 
             <Modal.Title>Update a Book, will ya!</Modal.Title>
@@ -19,7 +21,7 @@ class BookFormModalUpdate extends React.Component {
           </Modal.Header>
 
           <Modal.Body>
-            <UpdateBookForm onHide={this.props.modalHideUpdate} updatedBook={this.props.updatedBook} book={this.props.book}/>
+            <UpdateBookForm modalHideUpdate={this.props.modalHideUpdate} updatedBook={this.props.updatedBook} book={this.props.book}/>
           </Modal.Body>
 
           <Modal.Footer>
