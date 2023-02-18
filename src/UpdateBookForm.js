@@ -11,12 +11,12 @@ class UpdateBookForm extends React.Component {
       description: event.target.Description.value,
       status: event.target.Status.checked,
       _id: this.props.book._id,
-      __v: this.props.book.__v
+      
     }
     // console.log('UPDATED: ', bookToUpdate);
 
     this.props.updatedBook(bookToUpdate);
-    this.props.onHide();
+    this.props.modalHideUpdate();
   }
 
 

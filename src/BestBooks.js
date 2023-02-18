@@ -110,12 +110,12 @@ class BestBooks extends React.Component {
 
   updatedBook = async (bookToUpdate) => {
     try {
-      let url = `${process.env.REACT_APP_SERVER}/books/${bookToUpdate.id}`
+      let url = `${process.env.REACT_APP_SERVER}/books/${bookToUpdate._id}`
       let updateBook = await axios.put(url, bookToUpdate);
 
       let updatedBookArray = this.state.books.map(existingBook => {
-        return existingBook.id === bookToUpdate._id
-        ? updateBook.data : existingBook
+        return existingBook._id === bookToUpdate._id
+        ? bookToUpdate : existingBook
       })
       this.setState({
         books: updatedBookArray
@@ -162,7 +162,7 @@ class BestBooks extends React.Component {
         <h2>Some Essential Lifelong Learning &amp; Development Shelf</h2>
 
         {this.state.books.length > 0 ? (
-         <Carousel>{books}</Carousel>
+         <Carousel interval={null}>{books}</Carousel>
         ) : (
           <h3>No Books Found :(</h3>
         )}
@@ -171,7 +171,7 @@ class BestBooks extends React.Component {
         <BookFormModal modalShow={this.state.modalShow} modalHide={this.handleCloseModal} handleSubmit={this.handleBookSubmission} />
 
         <BookFormModalUpdate
-        modalShowUpdate={this.state.modalShowUpdate} modalHide={this.closeUpdateModal} updatedBook={this.updatedBook} book={this.state.book}
+        modalShowUpdate={this.state.modalShowUpdate} modalHideUpdate={this.closeUpdateModal} updatedBook={this.updatedBook} book={this.state.book}
         /> 
       </>
     )
