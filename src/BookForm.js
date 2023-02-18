@@ -21,11 +21,9 @@ class BookForm extends React.Component {
             </Form.Group>
 
             <Button type="submit">Add this Book</Button>
-           
-
              </Form>
 
-            </Container>
+           </Container>
             </>
         )
     }
