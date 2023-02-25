@@ -64,10 +64,11 @@ class BestBooks extends React.Component {
         }
 
 
-      let bookData = await axios.get(`${process.env.REACT_APP_SERVER}/books`)
+      let bookData = await axios.get(`${process.env.REACT_APP_SERVER}/books`,config)
       this.setState({
         books:bookData.data
       });
+    }
 
     } catch (error) {
       console.log('Jinkies! We have an error:',error.response)
