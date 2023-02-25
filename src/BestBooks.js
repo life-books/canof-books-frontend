@@ -4,6 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import { Button } from 'react-bootstrap';
 import BookFormModal from './BookFormModal';
 import BookFormModalUpdate from './BookFormModalUpdate';
+import { withAuth0 } from '@auth0/auth0-react';
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -48,10 +49,27 @@ class BestBooks extends React.Component {
 
   getBooks = async () => {
     try {
-      let bookData = await axios.get(`${process.env.REACT_APP_SERVER}/books`)
+      if (this.props.auth0.isAuthenticated) {
+        const res = await this.props.auth0.getIdTokenClaims();
+  
+        const jwt = res.__raw;
+  
+        console.log('token:  ', jwt);
+  
+        const config = {
+          headers: { "Authorization": `Bearer ${jwt}` },
+          baseURL: process.env.REACT_APP_SERVER,
+          method: 'get',
+          url: '/books'
+        }
+
+
+      let bookData = await axios(config)
+      console.log(bookData);
       this.setState({
         books:bookData.data
       });
+    }
 
     } catch (error) {
       console.log('Jinkies! We have an error:',error.response)
@@ -179,4 +197,4 @@ class BestBooks extends React.Component {
   }
 }
 
-export default BestBooks;
+export default withAuth0(BestBooks);

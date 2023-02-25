@@ -13,18 +13,19 @@ Copy the frontend and backend repos to you local machine and add your database
 
 ## Architecture
 
-Built using Atlas for mongodb, react-bootstrap, and javascript
+Built using Atlas for mongodb, react-bootstrap, and javascript, Mern Stack
 
 ## Change Log
 
-02-11-2001 6:59pm - Application now has a fully-functional netlify link that communicates with the backend database
+02-11-2023 6:59pm - Application now has a fully-functional netlify link that communicates with the backend database
+02-24-2023 6:00pm - Auth0 implementaion coplete
 
 ## Estimates
 
 
 ## Credit and Collaborations
 
-We want to thank our instructor Roger Reyes, netlify, render.com, and vscode! 
+We want to thank our instructor netlify, render.com, and vscode!
 
 Logistical
 
