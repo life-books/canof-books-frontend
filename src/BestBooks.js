@@ -64,7 +64,8 @@ class BestBooks extends React.Component {
         }
 
 
-      let bookData = await axios.get(`${process.env.REACT_APP_SERVER}/books`,config)
+      let bookData = await axios(config)
+      console.log(bookData);
       this.setState({
         books:bookData.data
       });

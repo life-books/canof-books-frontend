@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import './profile.css';
+import './Profile.css';
 import { Container } from "react-bootstrap";
 
 const Profile = () => {
