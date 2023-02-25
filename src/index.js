@@ -10,11 +10,11 @@ root.render(
     domain="dev-eb7af1k300mug3i4.us.auth0.com"
     clientId="sTBUSHJSxZUCBLgTKUy4JkamzQLMQfe9"
     authorizationParams={{
-      redirect_uri: window.location.origin
+      redirect_uri: process.env.REACT_APP_AUTH_REDIRECT_URI
     }}
   >
     
-  </Auth0Provider>
     <App />
+  </Auth0Provider>
   </React.StrictMode>
 );

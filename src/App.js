@@ -23,7 +23,7 @@ class App extends React.Component {
           <Routes>
             <Route 
               exact path="/"
-              element={<BestBooks />}
+              element={this.props.auth0.isAuthenticated &&<BestBooks />}
             >
             </Route>
             <Route
