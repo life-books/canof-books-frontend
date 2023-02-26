@@ -94,13 +94,30 @@ class BestBooks extends React.Component {
 
   postBooks = async (newBookObj) => {
     try {
-      let url = `${process.env.REACT_APP_SERVER}/books`;
+      console.log(newBookObj);
+      if (this.props.auth0.isAuthenticated) {
+        const res = await this.props.auth0.getIdTokenClaims();
+  
+        const jwt = res.__raw;
+  
+        console.log('token:  ', jwt);
+  
+        const config = {
+          headers: { "Authorization": `Bearer ${jwt}` },
+          baseURL: process.env.REACT_APP_SERVER,
+          method: 'post',
+          url: '/books',
+          data: newBookObj
+        }
 
-      let createdBook = await axios.post(url, newBookObj);
+      // let url = `${process.env.REACT_APP_SERVER}/books`;
+
+      let createdBook = await axios(config);
 
       this.setState({
         books: [...this.state.books, createdBook.data]
       })
+    }
 
     }catch (error) {
       console.log(error.message);
@@ -110,16 +127,29 @@ class BestBooks extends React.Component {
   deleteTheBook = async (id) => {
     console.log(id, 'This is the id');
     try {
+      if (this.props.auth0.isAuthenticated) {
+        const res = await this.props.auth0.getIdTokenClaims();
+  
+        const jwt = res.__raw;
+  
+        console.log('token:  ', jwt);
+  
+        const config = {
+          headers: { "Authorization": `Bearer ${jwt}` },
+          baseURL: process.env.REACT_APP_SERVER,
+          method: 'delete',
+          url: '/books'
+        }
       let url = `${process.env.REACT_APP_SERVER}/books/${id}`;
 
-      await axios.delete(url);
+      await axios(url, config);
 
       let updatedBooks = this.state.books.filter(book => book._id !== id);
 
       this.setState({
         books: updatedBooks
       });
-
+    }
 
     } catch (error) {
       console.log(error.message);
@@ -128,9 +158,23 @@ class BestBooks extends React.Component {
 
   updatedBook = async (bookToUpdate) => {
     try {
-      let url = `${process.env.REACT_APP_SERVER}/books/${bookToUpdate._id}`
+      if (this.props.auth0.isAuthenticated) {
+        const res = await this.props.auth0.getIdTokenClaims();
+  
+        const jwt = res.__raw;
+  
+        console.log('token:  ', jwt);
+  
+        const config = {
+          headers: { "Authorization": `Bearer ${jwt}` },
+          baseURL: process.env.REACT_APP_SERVER,
+          method: 'put',
+          url: `/books/${bookToUpdate._id}`,
+          data: bookToUpdate
+        }
       
-        await axios.put(url, bookToUpdate);
+      
+        await axios(config);
 
       let updatedBookArray = this.state.books.map(existingBook => {
         return existingBook._id === bookToUpdate._id
@@ -139,6 +183,7 @@ class BestBooks extends React.Component {
       this.setState({
         books: updatedBookArray
       });
+    }
 
     } catch(error) {
       console.log(error.message);

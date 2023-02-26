@@ -6,7 +6,7 @@ const LogoutButton = () => {
   const { logout } = useAuth0();
 
   return (
-    <Button variant="info" onClick={() => logout({ returnTo: window.location.origin })}>
+    <Button variant="info" onClick={() => logout({ returnTo: process.env.REACT_APP_AUTH_REDIRECT_URI})}>
       Log Out
     </Button>
   );
